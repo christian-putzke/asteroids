@@ -31,6 +31,12 @@ public class Player : Character
 
 
 	/**
+	 * The thrust particle system
+	 */
+	public ParticleSystem thrustParticleSystem;
+
+
+	/**
 	 * Is true if the players space ship has thrust 
 	 * Also plays / stops the looped thrust sfx
 	 */
@@ -44,10 +50,12 @@ public class Player : Character
 		{
 			if (value == true)
 			{
+				this.thrustParticleSystem.Play();
 				this.audioSource.Play();
 			}
 			else
 			{
+				this.thrustParticleSystem.Stop();
 				this.audioSource.Stop();
 			}
 			
