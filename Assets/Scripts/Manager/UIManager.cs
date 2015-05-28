@@ -8,13 +8,13 @@ public class UIManager : Singleton<UIManager>
 	/**
 	 * Includes all used panels
 	 */
-	public Panel[] panelArray;
+	public UI.Panel.Core[] panelArray;
 
 
 	/**
 	 * The current active panel
 	 */
-	private Enum.Panel activePanel = Enum.Panel.MainMenu;
+	private Enum.UIPanel activePanel = Enum.UIPanel.MainMenu;
 
 
 	/**
@@ -22,14 +22,14 @@ public class UIManager : Singleton<UIManager>
 	 */
 	private void Start()
 	{
-		this.Show(Enum.Panel.MainMenu);
+		this.Show(Enum.UIPanel.MainMenu);
 	}
 
 
 	/**
 	 * Shows the panel with the given id and hides the active one
 	 */
-	public void Show(Enum.Panel panel)
+	public void Show(Enum.UIPanel panel)
 	{
 		if (this.activePanel != panel)
 		{
@@ -45,7 +45,7 @@ public class UIManager : Singleton<UIManager>
 	/**
 	 * Returns the panel by the given panel type
 	 */
-	public Panel GetPanel(Enum.Panel panel)
+	public UI.Panel.Core GetPanel(Enum.UIPanel panel)
 	{
 		for (var index = 0; index < this.panelArray.Length; index ++)
 		{
@@ -62,7 +62,7 @@ public class UIManager : Singleton<UIManager>
 	/**
 	 * Returns the panel by the given panel type
 	 */
-	public Type GetPanel<Type>(Enum.Panel panel) where Type : Panel
+	public Type GetPanel<Type>(Enum.UIPanel panel) where Type : UI.Panel.Core
 	{
 		return (Type) this.GetPanel(panel);
 	}

@@ -45,7 +45,7 @@ public class GameManager : Singleton<GameManager>
 	 */
 	public void StartNewGame()
 	{
-		UIManager.Instance.Show(Enum.Panel.Ingame);
+		UIManager.Instance.Show(Enum.UIPanel.Ingame);
 
 		this.player.Activate();
 		this.InitializeAsteroids(this.asteroidStartAmount);
@@ -153,6 +153,6 @@ public class GameManager : Singleton<GameManager>
 		// Stops the alien respawn
 		this.CancelInvoke();
 
-		UIManager.Instance.GetPanel<IngamePanel>(Enum.Panel.Ingame).ShowGameOverScreen();
+		UIManager.Instance.GetPanel<UI.Panel.Ingame>(Enum.UIPanel.Ingame).ShowGameOverScreen();
 	}
 }

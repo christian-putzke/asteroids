@@ -26,9 +26,9 @@ public class Enum
 
 
 	/**
-	 * The panels (UI)
+	 * The UI.Panels
 	 */
-	public enum Panel
+	public enum UIPanel
 	{
 		MainMenu,
 		Highscore,

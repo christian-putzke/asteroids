@@ -233,7 +233,7 @@ public class Player : Character
 	{
 		this.score = score;
 
-		UIManager.Instance.GetPanel<IngamePanel>(Enum.Panel.Ingame).SetScore(this.score);
+		UIManager.Instance.GetPanel<UI.Panel.Ingame>(Enum.UIPanel.Ingame).SetScore(this.score);
 	}
 
 
@@ -253,7 +253,7 @@ public class Player : Character
 	{
 		this.life = life;
 
-		UIManager.Instance.GetPanel<IngamePanel>(Enum.Panel.Ingame).SetLife(this.life);
+		UIManager.Instance.GetPanel<UI.Panel.Ingame>(Enum.UIPanel.Ingame).SetLife(this.life);
 	}
 
 
